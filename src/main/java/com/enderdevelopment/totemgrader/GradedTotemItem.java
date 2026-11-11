@@ -4,6 +4,8 @@ import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.NbtComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import java.util.List;
@@ -18,7 +20,9 @@ public final class GradedTotemItem extends Item {
     public static int uses(ItemStack stack) {
         NbtComponent component = stack.get(DataComponentTypes.CUSTOM_DATA);
         if (component == null) return 2;
-        return Math.clamp(component.copyNbt().getInt(USES_KEY).orElse(2), 2, 10);
+        NbtCompound nbt = component.copyNbt();
+        int val = nbt.contains(USES_KEY) ? nbt.getInt(USES_KEY) : 2;
+        return Math.clamp(val, 2, 10);
     }
 
     public static void setUses(ItemStack stack, int uses) {
@@ -27,8 +31,8 @@ public final class GradedTotemItem extends Item {
         stack.set(DataComponentTypes.CUSTOM_NAME, Text.translatable("item.totemgrader.graded_totem").append(" (" + uses + " uses)").formatted(Formatting.RED));
     }
 
-    private static net.minecraft.nbt.NbtCompound itemNbt(int uses) {
-        net.minecraft.nbt.NbtCompound nbt = new net.minecraft.nbt.NbtCompound();
+    private static NbtCompound itemNbt(int uses) {
+        NbtCompound nbt = new NbtCompound();
         nbt.putInt(USES_KEY, uses);
         return nbt;
     }
@@ -39,7 +43,7 @@ public final class GradedTotemItem extends Item {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, net.minecraft.client.item.TooltipType type) {
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.literal("Uses: " + uses(stack) + "/10").formatted(Formatting.GRAY));
         tooltip.add(Text.literal("Progressive red eye shimmer").formatted(Formatting.DARK_RED));
     }
