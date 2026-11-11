@@ -4,7 +4,7 @@ import com.enderdevelopment.totemgrader.GradedTotemItem;
 import com.enderdevelopment.totemgrader.TotemGraderMod;
 import com.enderdevelopment.totemgrader.UpgradeScreenHandler;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.item.v1.ModelPredicateProviderRegistry;
+import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.DrawContext;
