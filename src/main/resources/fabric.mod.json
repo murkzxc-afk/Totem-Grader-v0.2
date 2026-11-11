@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "totemgrader",
+  "version": "${version}",
+  "name": "Totem Grader",
+  "description": "A progressive, multi-use Totem of Undying upgrade station.",
+  "authors": ["EnderDevelopment"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": { "main": ["com.enderdevelopment.totemgrader.TotemGraderMod"], "client": ["com.enderdevelopment.totemgrader.client.TotemGraderClient"] },
+  "depends": { "fabricloader": ">=0.16.9", "minecraft": "~1.21.1", "fabric-api": "*" }
+}

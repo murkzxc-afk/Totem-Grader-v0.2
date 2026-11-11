@@ -1,0 +1,17 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/totem_of_undying"
+  },
+  "overrides": [
+    { "predicate": { "totemgrader:uses": 2 }, "model": "totemgrader:item/graded_totem_2" },
+    { "predicate": { "totemgrader:uses": 3 }, "model": "totemgrader:item/graded_totem_3" },
+    { "predicate": { "totemgrader:uses": 4 }, "model": "totemgrader:item/graded_totem_4" },
+    { "predicate": { "totemgrader:uses": 5 }, "model": "totemgrader:item/graded_totem_5" },
+    { "predicate": { "totemgrader:uses": 6 }, "model": "totemgrader:item/graded_totem_6" },
+    { "predicate": { "totemgrader:uses": 7 }, "model": "totemgrader:item/graded_totem_7" },
+    { "predicate": { "totemgrader:uses": 8 }, "model": "totemgrader:item/graded_totem_8" },
+    { "predicate": { "totemgrader:uses": 9 }, "model": "totemgrader:item/graded_totem_9" },
+    { "predicate": { "totemgrader:uses": 10 }, "model": "totemgrader:item/graded_totem_10" }
+  ]
+}

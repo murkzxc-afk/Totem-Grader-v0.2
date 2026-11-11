@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["BDB","BSB","BBB"],"key":{"B":{"item":"minecraft:blackstone"},"D":{"item":"minecraft:diamond"},"S":{"item":"minecraft:smithing_table"}},"result":{"item":"totemgrader:semi_grade_table","count":1}}
