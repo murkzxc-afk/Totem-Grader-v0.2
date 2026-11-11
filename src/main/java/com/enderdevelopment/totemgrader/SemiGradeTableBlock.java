@@ -3,13 +3,12 @@ package com.enderdevelopment.totemgrader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.NamedScreenHandlerFactory;
-import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.SimpleNamedScreenHandlerFactory;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public final class SemiGradeTableBlock extends Block {
@@ -18,8 +17,10 @@ public final class SemiGradeTableBlock extends Block {
     }
 
     @Override
-    protected ActionResult onUse(BlockState state, World world, net.minecraft.util.math.BlockPos pos, PlayerEntity player, net.minecraft.util hand, BlockHitResult hit) {
-        if (!world.isClient) player.openHandledScreen(createFactory());
+    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+        if (!world.isClient) {
+            player.openHandledScreen(createFactory());
+        }
         return ActionResult.SUCCESS;
     }
 
